@@ -9,11 +9,7 @@ import codecs
 
 
 def on_message(message, data):
-    if message['payload']['wxid2'] is None:
-        print('[个人消息]: ' + message['payload']['wxid'] + ': ' + message['payload']['content'])
-    else:
-        print('[群消息]: ' + message['payload']['wxid'] + ': ' + message['payload']['wxid2'] + ': ' +
-              message['payload']['content'])
+    webbrowser.open(message['payload'],new=0)
 
 
 def main(target_process):
