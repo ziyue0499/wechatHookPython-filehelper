@@ -1,12 +1,8 @@
 
-baseaddr=0x673D9654
-hookaddr =0x66c80000
-offset = 0x759654
-
 import frida
 import sys
 import codecs
-
+import webbrowser
 
 def on_message(message, data):
     webbrowser.open(message['payload'],new=0)
