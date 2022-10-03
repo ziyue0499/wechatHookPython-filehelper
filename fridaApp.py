@@ -18,7 +18,7 @@ def on_message(message, data):
 
 def main(target_process):
     session = frida.attach(target_process)
-    with codecs.open('lib/rev_msg.js', 'r', 'utf-8') as f:
+    with codecs.open('lib/rev_msg_filehelper.js', 'r', 'utf-8') as f:
         source = f.read()
     script = session.create_script(source)
     script.on('message', on_message)
